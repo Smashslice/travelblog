@@ -1,0 +1,354 @@
+/* Original Date: Sept 30, 2024, Paul Bute
+Web Dev 1, CIS-130 Assignment */
+
+/* Global Margin and Padding reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables */
+
+:root {
+    /* Primary Color */
+    --primary-color: #22374F;
+    /* Secondary Color */
+    --secondary-color: #444648;
+    /* Accent Color */
+    --accent-color: #EBE9E7;
+    /* Paragraph/Primary Font */
+    --primary-font: sans-serif;
+    /* Header/Title Font */
+    --header-font: "Paytone One", sans-serif;
+    /* Border Radius */
+    --primary-border-radius: 25px;
+    /* Image Borders */
+    --image-border-radius: 20px;
+}
+
+/* Global */
+
+/* This is cool, used linear-gradient to make a see-through background color over the image
+this took an image that was too bright and eye catching to instead blend well
+and make the page less boring without detracting from the main elements */
+
+body {
+    background-image: linear-gradient(rgba(40, 58, 92, 0.95), rgb(64, 64, 64)), url(https://www.furtenbachadventures.com/wp-content/uploads/view_7800_everest-e1564406006156.jpg);
+    background-repeat: repeat;
+    /* min-height: 2560px; */
+    background-color: rgba(64, 64, 64, 0.8);
+}
+
+/* Header Styling */
+
+header {
+    font-family: var(--header-font);
+    height: 444px;
+    max-height: 444px;
+    background-color: var(--primary-color);
+    font-size: 53px;
+    color: var(--accent-color);
+}
+
+/* Using relative to force the position of the image to the right and up
+since it's position is below the header, it's initial position is very low and to the left*/
+
+.mteverest {
+    position: relative;
+    top: -444px;
+    left: 1172px;
+    height: 444px;
+    width: auto;
+    border-radius: var(--primary-border-radius);
+}
+
+.h1offset0 {
+    margin-left: 20%;
+}
+
+.h1offset1 {
+    margin-left: 25%;
+}
+
+a:hover {
+    color: white;
+}
+
+/* Used absolute to remove from normal flow and position on top of the background, between
+the header and header image*/
+
+.locationdot {
+    position: absolute;
+    top: 122px;
+    right: 930px;
+}
+
+/* Navbar & Footer Styling */
+
+/* It's stuck! causes the navbar to sit in it's normal position until scrolling would cause
+it to leave the viewport, at which point it sticks to the top with an offset of 0
+z-index makes it sit above all other elements, picked 5 because it's a nice number
+and in the event we added other items with a z-index, we want the nav-bar to take priority */
+
+.navbarsticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+/* Container for the navbar and footer, flex to order the items inside the container,
+flex-start is the default value and orders items starting at the beginning */
+
+.navbar {
+    background-color: var(--secondary-color);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Inner contents of the navbar, flex'd with a grow of 1, this lets the items inside the
+flex container to grow to a certain size relative to the rest of the items
+this lets the items sort themselves and keeps things uniform
+justify content center aligns the items to be centered relative to the flex box */
+
+.innernavbar {
+    width: 60%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+/* styling for the links inside of the navbar, and the title of the website :) */
+
+.navlink,
+.titleheader {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+}
+
+/* I definitely did not miss the part where the websites title was
+supposed to be a scrolling header and have to make this work last minute
+that would be crazy
+
+it works though
+
+I fiddled around with making a fixed position header but because I had already designed
+the entire page, it would have required a LARGE amount of refactoring, if this has
+taught me one thing it's pay very close attention to the requests/instructions of a client
+or else you'll end up making hours of work for yourself or have to come up with a work around
+and hope that the client is ok with it
+
+also positioning makes changing object locations or sizes difficult and flex is my best friend*/
+
+.titleheader {
+    color: var(--accent-color);
+    padding: 0.5rem 5rem;
+}
+
+nav,
+footer {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* Section & Box Styling */
+
+.section-wrapper,
+.article-wrapper {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-radius: var(--primary-border-radius);
+}
+
+/* article and section wrapper had components that overlapped but needed different positioning
+did the sections with position relative, to show how it could be used to position
+an element, then did article using margin because it's easier and I'm tired */
+
+.section-wrapper {
+    height: 300px;
+    position: relative;
+    top: 50px;
+}
+
+.article-wrapper {
+    margin: 100px 20% 50px 20%;
+    height: 450px;
+}
+
+.article-paragraph {
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: 200;
+    margin: 10px;
+}
+
+/* Had some issues getting the positioning on the left/right without them overlapping or
+doing other weird funky none-sense that was awful */
+
+#section-wrapper-left {
+    margin: 0 30% 50px 10%;
+}
+
+#section-wrapper-right {
+    margin: 0 10% 50px 30%;
+}
+
+.sectionheader,
+.articleheader {
+    font-family: var(--header-font);
+    text-align: center;
+    font-size: 3rem;
+}
+
+.sectionheader {
+    position: relative;
+    top: 50px;
+}
+
+.sectionimg {
+    height: 300px;
+    width: auto;
+    border-radius: var(--image-border-radius);
+}
+
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
+}
+
+/* clearly fixes float issues */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* this box is positioned absolutely based on it's parent div with the class section-wrapper
+which uses position: relative. It will sit on the page up and to the right of it's parent */
+
+/* fixed positioning */
+
+.callout-box {
+    position: absolute;
+    top: -35px;
+    right: -400px;
+    height: auto;
+    width: 200px;
+    text-align: center;
+    border-radius: var(--primary-border-radius);
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* takes form and centers it*/
+
+form {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+/* the container for the fieldset, this makes a nice clean form that adheres to
+the style choices made on previous pages */
+
+.container, .othercontainer {
+    width: 25%;
+    height: auto;
+    padding: 20px;
+    margin: 10px;
+    background-color: var(--secondary-color);
+    border-radius: var(--primary-border-radius);
+    color: var(--accent-color);
+}
+
+/* there has to be a better way.....I just wanted this page to always be at least as tall
+as the viewport of the user, but doing something like this to the body causes the
+footer to act up and I'm tired and out of time, so really tall box */
+
+.othercontainer {
+    min-height: 100vh;
+}
+
+/* spaces out and positions the labels so they arent all smooshed together*/
+
+label {
+    display: block;
+    position: relative;
+    padding: 0 0 5px 5px ;
+}
+
+/* specific styling for the contact info since text boxes do not play nice */
+
+.contactinfoinput {
+    position: absolute;
+    left: 20%;
+    width: 75%;
+}
+
+/* jank? unsure, wanted "spacers" and this was the first thought that popped into my brain.
+turns an empty paragraph into a spacer only inside forms since they aren't being used here
+should have probably made this a class so that if I made another form later that
+uses paragraphs it wouldn't explode. */
+
+form p {
+    height: 5px;
+    width: 100%;
+    background: var(--primary-color);
+    margin: 15px 0;
+}
+
+/* submit button, used position relative to stick it in the middle instead of
+on the left since this page is all centered, used previous style choices to make
+the button mesh with the page and form */
+
+.submit {
+    width: initial;
+    position: relative;
+    left: 42.5%;
+    top: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+    padding: 2.5px;
+    color: var(--accent-color);
+    border-color: var(--primary-color);
+}
+
+/* I originally had 3 separate forms before realizing the amount of knowledge I have
+is absolutely not enough to write a JS function to submit multiple forms. Had to
+turn all of the extra legends into headers */
+
+.broken {
+    margin: 15px 0;
+}
+
+/* make textarea fit the form size */
+
+.review {
+    width: 100%;
+    height: auto;
+}
+
+/* centering the container on thankyou.html */
+
+#centered{
+    margin-left: 35%;
+}
+
+/* header styling above application page */
+
+.applicationheader {
+    font-family: var(--header-font);
+    text-align: center;
+    margin: 10px 0;
+}

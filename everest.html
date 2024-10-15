@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/17fc0b51b5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbarsticky">
+        <div class="innernavbar">
+            <h3 class="titleheader">Seize The Moment</h3>
+            <a class="navlink" href="travel.html" target="_blank">Home</a>
+            <a class="navlink" href="" target="_blank">Gallery</a>
+            <a class="navlink" href="everest.html" target="_blank">Contact Us</a>
+            <h3 class="titleheader">Seize The Moment</h3>
+        </div>
+    </nav>
+    <h2 class="applicationheader">Want to hike Mt. Everest with Seize the Moment? Fill out an initial application here!</h2>
+    <form name="contactform" method="get" action="thankyou.html">
+        <fieldset class="container">
+            <legend>
+                Contact Information
+            </legend>
+            <label for="fname">
+                First Name:
+                <input class="contactinfoinput" type="text" name="fname" id="fname" required
+                    placeholder="First Name">
+            </label>
+            <label for="lname">
+                Last Name:
+                <input class="contactinfoinput" type="text" name="lname" id="lname" required
+                    placeholder="Last Name">
+            </label>
+            <label for="email">
+                Email:
+                <input class="contactinfoinput" type="email" name="email" id="email" required
+                    placeholder="E-mail Address">
+            </label>
+            <p></p>
+            <h4 class="broken">
+                Your Hiking Experience
+            </h4>
+            <label for="hikede">
+                <input type="radio" name="hikede" id="hikede" required>
+                Hiked Everest Before
+            </label>
+            <label for="hikedother">
+                <input type="radio" name="hikede" id="hikedother" required>
+                Hiked other 20k+ mountains
+            </label>
+            <label for="neverhiked">
+                <input type="radio" name="hikede" id="neverhiked" required
+                    value="Never hiked before in my life">
+                Never hiked before in my life
+            </label>
+            <p></p>
+            <label for="hikedeverest">
+                <input type="checkbox" name="hikingexperience" id="hikedeverest">
+                Hiked Mt. Everest
+            </label>
+            <label for="hikedk2">
+                <input type="checkbox" name="hikingexperience" id="hikedk2">
+                Hiked K2
+            </label>
+            <label for="hikedkil">
+                <input type="checkbox" name="hikingexperience" id="hikedkil">
+                Hiked Mt. Kilimanjaro
+            </label>
+            <label for="hikedfuji">
+                <input type="checkbox" name="hikingexperience" id="hikedfuji">
+                Hiked Mt. Fuji
+            </label>
+            <label for="hikedmatter">
+                <input type="checkbox" name="hikingexperience" id="hikedmatter">
+                Hiked Matterhorn
+            </label>
+            <p></p>
+            <label for="yearshiking">
+                Years of Hiking Experience: 
+                <input type="number" name="yearshiking" id="yearshiking" min="1" max="31">
+            </label>
+            <label for="injuries">
+                Most severe injury sustained while hiking:
+                <select name="injuries" id="injuries">
+                    <option value="No Injuries">No Injuries</option>
+                    <option value="Sprain">Sprain</option>
+                    <option value="Loss of Limb">Loss of Limb</option>
+                    <option value="Died">Died</option>
+                </select>
+            </label>
+
+            <p></p>
+            <h4 class="broken">
+                Hiked Everest with us before? Leave a review!
+            </h4>
+            <textarea class="review" name="review" rows="10" cols="30" placeholder="Leave a glowing review here!"></textarea>
+
+
+            <input class="submit" type="submit" value="Submit">
+        </fieldset>
+    </form>
+    <footer class="navbar">
+        <div class="innernavbar">
+            <a class="navlink" href="" target="_blank">(555-5555-555)</a>
+            <a class="navlink" href="" target="_blank">climbeverest@dontdie.com</a>
+            <a class="navlink" href="" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a class="navlink" href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <p class="navlink">Copyright &copy; 2024</p>
+        </div>
+    </footer>
+</body>
+
+</html>
